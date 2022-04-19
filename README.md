@@ -1,7 +1,7 @@
 # FRAMEWORK / CMS
 ### Par Julien Delusseau
 
-Il s'agit d'un framework PHP 8.1 "from scratch".
+Il s'agit d'un framework PHP 7.4 "from scratch".
 
 ## Fonctionnalités:
 - CRUD utilisateurs
