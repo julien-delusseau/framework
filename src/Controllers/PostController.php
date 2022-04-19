@@ -8,6 +8,11 @@ use Cocur\Slugify\Slugify;
 
 class PostController extends MainController
 {
+    /**
+     * La route par défaut
+     * @param $slug
+     * @return void
+     */
     public function index($slug)
     {
         $article = PostsModel::getPostBySlug($slug);
@@ -27,6 +32,10 @@ class PostController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour créer un article
+     * @return void
+     */
     public function create()
     {
         if (!isGranted('admin') && !isGranted('author')) {
@@ -94,6 +103,11 @@ class PostController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour modifier un article
+     * @param string $slug
+     * @return void
+     */
     public function update(string $slug)
     {
         $article = PostsModel::getPostBySlug($slug);
@@ -149,6 +163,10 @@ class PostController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour supprimer un article
+     * @return void
+     */
     public function delete()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST')
@@ -171,6 +189,11 @@ class PostController extends MainController
         }
     }
 
+    /**
+     * La méthode pour vérifier si l'utilisateur est l'auteur de l'article
+     * @param $article
+     * @return void
+     */
     private function isOwner($article)
     {
         if (!isGranted('admin') && $_SESSION['user']['id'] !== $article->userID) {

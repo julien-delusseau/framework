@@ -4,6 +4,10 @@ namespace App\Controllers;
 
 class ErrorController extends MainController
 {
+    /**
+     * La route par défaut
+     * @return void
+     */
     public function index()
     {
         $data = [

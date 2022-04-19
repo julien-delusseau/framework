@@ -12,6 +12,9 @@ use App\Models\CategoryModel;
 
 class AdminController extends MainController
 {
+    /**
+     * On redirige l'utilisateur s'il n'est pas admin
+     */
     public function __construct()
     {
         if (!isGranted('admin')) {
@@ -19,6 +22,10 @@ class AdminController extends MainController
         }
     }
 
+    /**
+     * La route par défaut
+     * @return void
+     */
     public function index()
     {
         $posts = PostsModel::getItems(3);
@@ -34,6 +41,10 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour les articles
+     * @return void
+     */
     public function posts()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -67,6 +78,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour supprimer un article
+     * @param int $id
+     * @return void
+     */
     public function deletePost(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -84,6 +100,10 @@ class AdminController extends MainController
         }
     }
 
+    /**
+     * La route des utilisateurs
+     * @return void
+     */
     public function users()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -116,6 +136,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour modifier un utilisateur
+     * @param $id
+     * @return void
+     */
     public function update($id)
     {
         $profil = UserModel::searchUserById($id);
@@ -166,6 +191,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour supprimer un utilisateur
+     * @param $id
+     * @return void
+     */
     public function deleteUser($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -197,6 +227,10 @@ class AdminController extends MainController
         }
     }
 
+    /**
+     * La route des commentaires
+     * @return void
+     */
     public function comments()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -230,6 +264,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour modifier un commentaire
+     * @param int $id
+     * @return void
+     */
     public function editComment(int $id)
     {
         $comment = CommentModel::getOneCommentById($id);
@@ -257,6 +296,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour supprimer un commentaire
+     * @param int $id
+     * @return void
+     */
     public function deleteComment(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -277,6 +321,10 @@ class AdminController extends MainController
         }
     }
 
+    /**
+     * La route des catégories
+     * @return void
+     */
     public function categories()
     {
         $categories = CategoryModel::getItems();
@@ -290,6 +338,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour modifier une catégorie
+     * @param int $id
+     * @return void
+     */
     public function editCategory(int $id)
     {
 
@@ -318,6 +371,11 @@ class AdminController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La fonction pour supprimer une catégorie
+     * @param int $id
+     * @return void
+     */
     public function deleteCategory(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -336,6 +394,10 @@ class AdminController extends MainController
         }
     }
 
+    /**
+     * La route pour ajouter une catégorie
+     * @return void
+     */
     public function addCategory()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

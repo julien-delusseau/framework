@@ -4,6 +4,10 @@ namespace App\Controllers;
 class PagesController extends MainController
 {
 
+    /**
+     * La route pour afficher la page de contact
+     * @return void
+     */
     public function contact()
     {
         $data = [

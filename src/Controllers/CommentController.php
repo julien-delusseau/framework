@@ -7,6 +7,10 @@ use App\Models\PostsModel;
 
 class CommentController extends MainController
 {
+    /**
+     * La route par défaut
+     * @return void
+     */
     public function index()
     {
         if (!isLoggedIn()) redirect('/user/login');
@@ -36,6 +40,11 @@ class CommentController extends MainController
         }
     }
 
+    /**
+     * La route pour mettre à jour des commentaires
+     * @param $id
+     * @return void
+     */
     public function update($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -65,6 +74,11 @@ class CommentController extends MainController
         }
     }
 
+    /**
+     * La route pour supprimer un commentaire
+     * @param $id
+     * @return void
+     */
     public function delete($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

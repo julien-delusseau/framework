@@ -8,6 +8,10 @@ use App\Models\UserModel;
 
 class UserController extends MainController
 {
+    /**
+     * La route de connexion
+     * @return void
+     */
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,6 +42,10 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour s'enregistrer
+     * @return void
+     */
     public function register()
     {
         $data = [
@@ -124,6 +132,10 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La méthode pour se déconnecter
+     * @return void
+     */
     public function logout()
     {
         if (isLoggedIn()) {
@@ -133,6 +145,10 @@ class UserController extends MainController
         }
     }
 
+    /**
+     * La route pour afficher le profil
+     * @return void
+     */
     public function profil()
     {
         if (!isLoggedIn()) {
@@ -151,6 +167,10 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour mettre à jour l'utilisateur
+     * @return void
+     */
     public function update()
     {
         $data = [
@@ -204,6 +224,10 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour modifier le mot de passe
+     * @return void
+     */
     public function updatePassword()
     {
         $data = [
@@ -249,6 +273,11 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour afficher un utilisateur
+     * @param string $full_name
+     * @return void
+     */
     public function filter(string $full_name)
     {
         $fullname = explode('-', trim(htmlspecialchars($full_name)));
@@ -273,6 +302,10 @@ class UserController extends MainController
 
     }
 
+    /**
+     * La route pour mettre à jour l'avatar de l'utilisateur
+     * @return void
+     */
     public function updateImage()
     {
         if (!isLoggedIn()) redirect('/user/login');
@@ -348,6 +381,11 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * la méthode pour supprimer un utilisateur
+     * @param $id
+     * @return void
+     */
     public function deleteUser($id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -375,6 +413,10 @@ class UserController extends MainController
         }
     }
 
+    /**
+     * La route pour les mots de passe oubliés
+     * @return void
+     */
     public function forgotPass()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -406,6 +448,11 @@ class UserController extends MainController
         $this->generateView($data);
     }
 
+    /**
+     * La route pour faire un reset du mot de passe
+     * @param string $token
+     * @return void
+     */
     public function resetPass(string $token)
     {
         $data = [

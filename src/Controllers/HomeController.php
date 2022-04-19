@@ -6,6 +6,10 @@ use App\Models\PostsModel;
 
 class HomeController extends MainController
 {
+    /**
+     * La route par défaut
+     * @return void
+     */
     public function index()
     {
         if (!empty(PostsModel::getCount()[0])) {

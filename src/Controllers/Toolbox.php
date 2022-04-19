@@ -30,6 +30,12 @@ class Toolbox
         ];
     }
 
+    /**
+     * Méthode pour créer un message flash
+     * @param string $type
+     * @param string $message
+     * @return void
+     */
     public static function flashMessage(string $type, string $message)
     {
         $_SESSION["FLASH_MESSAGE"][] = [
@@ -39,6 +45,7 @@ class Toolbox
     }
 
     /**
+     * Méthode pour envoyer un email
      * @param string $from
      * @param string $to
      * @param string $subject

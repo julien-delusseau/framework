@@ -4,6 +4,11 @@ namespace App\Controllers;
 
 class MainController
 {
+    /**
+     * La méthode pour générer une vue
+     * @param array $data
+     * @return void
+     */
     protected function generateView(array $data): void
     {
         extract($data);
