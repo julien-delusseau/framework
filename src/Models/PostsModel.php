@@ -11,7 +11,7 @@ class PostsModel extends Database
      * Méthode pour connaître le nombre de lignes dans notre table.
      * @return mixed
      */
-    public static function getCount(): mixed
+    public static function getCount()
     {
         $pdo = Database::getPDO();
 
@@ -26,9 +26,9 @@ class PostsModel extends Database
     /**
      * @param int $limit
      * @param int $offset
-     * @return array|bool
+     * @return mixed
      */
-    public static function getItems(int $limit = 10, int $offset = 0): array|bool
+    public static function getItems(int $limit = 10, int $offset = 0)
     {
         $pdo = Database::getPDO();
 
@@ -67,9 +67,9 @@ class PostsModel extends Database
      * Méthode pour trouver les articles par auteur
      * @param int $authorId
      * @param int $limit
-     * @return array|bool
+     * @return mixed
      */
-    public static function getPostsByAuthor(int $authorId, int $limit = 3): array|bool
+    public static function getPostsByAuthor(int $authorId, int $limit = 3)
     {
         $pdo = Database::getPDO();
 
@@ -110,9 +110,9 @@ class PostsModel extends Database
     /**
      * Méthode pour chercher les derniers articles créés
      * @param int $limit
-     * @return array|false
+     * @return mixed
      */
-    public static function getLatestPosts(int $limit): array|false
+    public static function getLatestPosts(int $limit)
     {
         $pdo = Database::getPDO();
 
@@ -136,7 +136,7 @@ class PostsModel extends Database
      * @param string $slug
      * @return mixed
      */
-    public static function getPostBySlug(string $slug): mixed
+    public static function getPostBySlug(string $slug)
     {
         $pdo = Database::getPDO();
 
@@ -171,9 +171,9 @@ class PostsModel extends Database
     /**
      * Méthode pour trouver le nombre d'articles par catégorie
      * @param string $name
-     * @return array|false
+     * @return mixed
      */
-    public static function getPostsCountByCategoryName(string $name): array|false
+    public static function getPostsCountByCategoryName(string $name)
     {
         $pdo = Database::getPDO();
 
@@ -197,9 +197,9 @@ class PostsModel extends Database
      * @param string $categoryName
      * @param int $limit
      * @param int $offset
-     * @return array|false
+     * @return mixed
      */
-    public static function getPostsByCategoryName(string $categoryName): array|false
+    public static function getPostsByCategoryName(string $categoryName)
     {
         $pdo = Database::getPDO();
 
@@ -240,9 +240,9 @@ class PostsModel extends Database
     /**
      * Méthode pour chercher un article par son titre, grâce à un formulaire de recherche
      * @param string $title
-     * @return array|false
+     * @return mixed
      */
-    public static function queryPost(string $title): array|false
+    public static function queryPost(string $title)
     {
         $pdo = Database::getPDO();
 
@@ -284,7 +284,7 @@ class PostsModel extends Database
      * @param int $category
      * @return mixed
      */
-    public static function createPost(string $title, string $image, string $content, string $slug, int $author_id, int $category): mixed
+    public static function createPost(string $title, string $image, string $content, string $slug, int $author_id, int $category)
     {
         $pdo = Database::getPDO();
 

@@ -7,21 +7,17 @@ use App\Models\CategoryModel;
 $faker = Faker\Factory::create();
 $slugify = new Slugify();
 
-$pdo = new PDO("mysql:host=localhost;dbname=blog;charset=utf8", "root", "", [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
+$pdo = new PDO("mysql:host=localhost;dbname=framework", "root", "");
 
-$pdo->exec("SET FOREIGN_KEY_CHECKS=0;");
-
+$pdo->exec("SET FOREIGN_KEY_CHECKS=0");
 $pdo->exec("DELETE FROM posts");
 $pdo->exec("DELETE FROM posts_categories");
 
-for ($i = 0; $i < 10; $i++)
-{
+for ($i = 0; $i < 10; $i++) {
     if (rand(0, 1) === 0) {
         $author = 1;
     } else {
-        $author = 10;
+        $author = 2;
     }
     $sentence = $faker->sentence();
     $query = $pdo->prepare('
@@ -39,7 +35,6 @@ for ($i = 0; $i < 10; $i++)
     ]);
     $lastId = $pdo->lastInsertId();
 
-    CategoryModel::addPostToCategory($lastId, rand(1, 5));
+    CategoryModel::addPostToCategory($lastId, rand(1, 3));
 }
-
-$pdo->exec("SET FOREIGN_KEY_CHECKS=1;");
+$pdo->exec("SET FOREIGN_KEY_CHECKS=1");

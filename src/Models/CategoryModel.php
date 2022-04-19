@@ -10,7 +10,7 @@ class CategoryModel extends Database
      * Méthode pour connaître le nombre de lignes dans notre table.
      * @return mixed
      */
-    public static function getCount(): mixed
+    public static function getCount()
     {
         $pdo = Database::getPDO();
 
@@ -25,7 +25,7 @@ class CategoryModel extends Database
      * Méthode pour chercher toutes nos catégories et le nombre d'articles
      * @return array|false
      */
-    public static function getItems(): array|false
+    public static function getItems()
     {
         $pdo = Database::getPDO();
 
@@ -45,7 +45,7 @@ class CategoryModel extends Database
      * Méthode pour lister toutes nos catégories
      * @return array|false
      */
-    public static function listCategories(): array|false
+    public static function listCategories()
     {
         $pdo = Database::getPDO();
 
@@ -63,7 +63,7 @@ class CategoryModel extends Database
      * @param int $id
      * @return mixed
      */
-    public static function getOneCategory(int $id): mixed
+    public static function getOneCategory(int $id)
     {
         $pdo = Database::getPDO();
 

@@ -10,7 +10,7 @@ class CommentModel extends Database
      * Méthode pour connaître le nombre de lignes dans notre table.
      * @return mixed
      */
-    public static function getCount(): mixed
+    public static function getCount()
     {
         $pdo = Database::getPDO();
 
@@ -22,7 +22,7 @@ class CommentModel extends Database
     }
 
 
-    public static function getItems(int $limit = 10, int $offset = 0): array|bool
+    public static function getItems(int $limit = 10, int $offset = 0)
     {
         $pdo = Database::getPDO();
 
@@ -52,7 +52,7 @@ class CommentModel extends Database
      * @param int $postId
      * @return array|false
      */
-    public static function getCommentsByPost(int $postId): array|false
+    public static function getCommentsByPost(int $postId)
     {
         $pdo = Database::getPDO();
 
@@ -85,7 +85,7 @@ class CommentModel extends Database
      * @param int $commentId
      * @return mixed
      */
-    public static function getOneCommentById(int $commentId): mixed
+    public static function getOneCommentById(int $commentId)
     {
         $pdo = Database::getPDO();
 
@@ -112,9 +112,9 @@ class CommentModel extends Database
     /**
      * Méthode pour chercher un commentaire par son contenu, grâce à un formulaire de recherche
      * @param string $content
-     * @return array|false
+     * @return mixed
      */
-    public static function queryComment(string $content): array|false
+    public static function queryComment(string $content)
     {
         $pdo = Database::getPDO();
 

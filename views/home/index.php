@@ -13,12 +13,12 @@
         <div style="display: flex; align-items: center; justify-content: space-between">
             <?php if ($currentPage > 1): ?>
                 <a class="btn btn-flat btn-color"
-                   href="<?= $currentPage === "2" ? URL : URL . '?page=' . $currentPage - 1 ?>">&laquo; Articles récents</a>
+                   href="<?= $currentPage === "2" ? URL : URL . '?page=' . ($currentPage - 1) ?>">&laquo; Articles récents</a>
             <?php endif ?>
 
             <?php if ($currentPage < $pages): ?>
                 <a style="margin-left: auto" class="btn btn-flat btn-color"
-                   href="<?= URL . '?page=' . $currentPage + 1 ?>">Articles
+                   href="<?= URL . '?page=' . ($currentPage + 1) ?>">Articles
                     ancients &raquo;</a>
             <?php endif ?>
         </div>

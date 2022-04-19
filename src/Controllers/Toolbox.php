@@ -13,7 +13,7 @@ class Toolbox
      * @param mixed $user
      * @return void
      */
-    public static function createSession(mixed $user)
+    public static function createSession($user)
     {
         if (isset($_SESSION["user"])) {
             unset($_SESSION["user"]);
@@ -52,7 +52,7 @@ class Toolbox
      * @param string $html
      * @return void
      */
-    public static function sendEmail(string $to, string $subject, string $html, string $from = ADMIN): void
+    public static function sendEmail(string $to, string $subject, string $html, string $from = ADMIN_EMAIL): void
     {
         $transport = Transport::fromDsn(MAILER_DSN);
         $mailer = new Mailer($transport);

@@ -10,7 +10,7 @@ class UserModel extends Database
      * Méthode pour connaître le nombre de lignes dans notre table.
      * @return mixed
      */
-    public static function getCount(): mixed
+    public static function getCount()
     {
         $pdo = Database::getPDO();
 
@@ -25,9 +25,9 @@ class UserModel extends Database
      * Méthode pour chercher tous les utilisateurs
      * @param int $limit
      * @param int $offset
-     * @return array|false
+     * @return mixed
      */
-    public static function getItems(int $limit = 10, int $offset = 0): array|false
+    public static function getItems(int $limit = 10, int $offset = 0)
     {
         $pdo = Database::getPDO();
 
@@ -46,7 +46,7 @@ class UserModel extends Database
      * @param string $email
      * @return mixed
      */
-    public static function searchUserByEmail(string $email): mixed
+    public static function searchUserByEmail(string $email)
     {
         $pdo = Database::getPDO();
 
@@ -62,7 +62,7 @@ class UserModel extends Database
      * @param int $id
      * @return mixed
      */
-    public static function searchUserById(int $id): mixed
+    public static function searchUserById(int $id)
     {
         $pdo = Database::getPDO();
 
@@ -79,7 +79,7 @@ class UserModel extends Database
      * @param string $lastname
      * @return mixed
      */
-    public static function searchUserByFullName(string $firstname, string $lastname): mixed
+    public static function searchUserByFullName(string $firstname, string $lastname)
     {
         $pdo = Database::getPDO();
 
@@ -97,7 +97,7 @@ class UserModel extends Database
      * @param string $token
      * @return mixed
      */
-    public static function searchUserByToken(string $token): mixed
+    public static function searchUserByToken(string $token)
     {
         $pdo = Database::getPDO();
 
@@ -115,9 +115,9 @@ class UserModel extends Database
     /**
      * Méthode pour chercher un utilisateur par son nom, grâce à un formulaire de recherche
      * @param string $lastname
-     * @return array|false
+     * @return mixed
      */
-    public static function queryUser(string $lastname): array|false
+    public static function queryUser(string $lastname)
     {
         $pdo = Database::getPDO();
 
@@ -168,7 +168,7 @@ class UserModel extends Database
      * @param string|null $description
      * @return mixed
      */
-    public static function updateUser(int $id, string $email, string $firstname, string $lastname, ?string $description = null): mixed
+    public static function updateUser(int $id, string $email, string $firstname, string $lastname, ?string $description = null)
     {
         $pdo = Database::getPDO();
 

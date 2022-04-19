@@ -7,16 +7,16 @@ use App\Models\PostsModel;
  * Fonction pour chercher les catégories, ainsi que leur nombre par article
  * @return array|false
  */
-function getCategories(): array|false
+function getCategories()
 {
     return CategoryModel::getItems();
 }
 
 /**
  * Fonction pour chercher les derniers articles créés
- * @return array|false
+ * @return mixed
  */
-function getLatestPosts(): array|false
+function getLatestPosts()
 {
     return PostsModel::getLatestPosts(4);
 }

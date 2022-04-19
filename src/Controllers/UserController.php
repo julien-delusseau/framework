@@ -429,7 +429,7 @@ class UserController extends MainController
                 <h2>Bonjour.</h2>
                 <p>Vous avez demandé le reset de votre mot de passe.</p>
                 <p>Merci de cliquer sur <a href='".URL."/user/resetpass/".$user->token."'>ce lien</a> afin de précéder au changement.</p>
-                <p>L'administrateur de ce site</p>
+                <p>".ADMIN."</p>
                 ";
 
                 Toolbox::flashMessage("success", "Un email vient de vous être envoyé.");

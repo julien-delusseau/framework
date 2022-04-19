@@ -182,7 +182,7 @@ class AdminController extends MainController
             $lastname = htmlspecialchars($_POST['lastname']);
             $description = htmlspecialchars($_POST['description']);
 
-            $user = UserModel::updateUser($email, $firstname, $lastname, $description);
+            $user = UserModel::updateUser($id, $email, $firstname, $lastname, $description);
 
             if ($user !== false) {
                 redirect('/admin/users');

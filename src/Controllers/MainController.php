@@ -25,7 +25,7 @@ class MainController
      * @param int $limit
      * @return array
      */
-    protected function pagination(mixed $modelName, int $limit): array
+    protected function pagination($modelName, int $limit): array
     {
         $page = $_GET['page'] ?? 1;
         if (!filter_var($page, FILTER_VALIDATE_INT)) redirect();
@@ -56,9 +56,10 @@ class MainController
      * Méthode pour faire une pagination côté admin
      * @param mixed $modelName
      * @param int $limit
+     * @param string $redirect
      * @return array
      */
-    protected function adminPagination(mixed $modelName, int $limit, string $redirect): array
+    protected function adminPagination($modelName, int $limit, string $redirect): array
     {
         $page = $_GET['page'] ?? 1;
         if (!filter_var($page, FILTER_VALIDATE_INT)) redirect($redirect);
@@ -71,10 +72,10 @@ class MainController
         $model = "App\Models\\" . $modelName;
         $count = $model::getCount()[0];
 
-        $nbPages = ceil($count / $limit);
-        $offset = ($currentPage - 1) * $limit;
+        $nbPages = (int)ceil($count / $limit);
+        $offset = (int)($currentPage - 1) * $limit;
 
-        if ($currentPage > $nbPages || $currentPage < 1) redirect($redirect);
+        if ($currentPage > $nbPages || $currentPage < 1) $items = [];
 
         $items = $model::getItems($limit, $offset);
 
