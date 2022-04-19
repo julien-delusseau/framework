@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="<?= URL ?>/public/assets/favicon.ico">
     <title>
-        <title><?= $title ?? 'Bienvenue' ?> | <?= SITE_NAME ?></title>
+        <?= $title ?? 'Bienvenue' ?> | <?= SITE_NAME ?>
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"

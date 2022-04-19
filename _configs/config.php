@@ -16,8 +16,8 @@ const SITE_NAME = "Framework CMS";
  */
 
 // Nom et email de l'administrateur principal
-const ADMIN = "YOUR_NAME";
-const ADMIN_EMAIL = "YOU_EMAIL";
+const ADMIN = "Julien Delusseau";
+const ADMIN_EMAIL = "admin@cms.com";
 
 /*
  * -----------------------------------------------------
@@ -27,7 +27,7 @@ const ADMIN_EMAIL = "YOU_EMAIL";
 
 // Accès à la base de données
 const DB_HOST = "localhost";
-const DB_NAME = "framework";
+const DB_NAME = "blog";
 const DB_USER = "root";
 const DB_PASS = "";
 
@@ -38,9 +38,9 @@ const DB_PASS = "";
  */
 
 // Réseaux sociaux
-const EMAIL = "";
-const LINKEDIN = "";
-const GITHUB = "";
+const EMAIL = "julien.delusseau@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/julien-delusseau-06b795130";
+const GITHUB = "https://github.com/julien-delusseau";
 const TWITTER = "";
 const FACEBOOK = "";
 
@@ -60,7 +60,4 @@ const GOOGLE_MAP = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12
  */
 
 // DSN de votre boîte email
-// Merci de vous référer à ce lien: https://symfony.com/doc/current/mailer.html
-const DSN_EMAIL = "";
-const DSN_PASS = "";
-const MAILER_DSN = "";
+const MAILER_DSN = "gmail+smtp://".EMAIL.":bamepxhuvrvrmtxg@default";
